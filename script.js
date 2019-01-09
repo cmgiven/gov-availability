@@ -16,6 +16,36 @@ function update(data) {
          1 - aggregateTimeRangesAfterDate(data.shutdowns, data.usa.start) /
             differenceOfTimeRange(data.usa)
     );
+    setAvailability(
+        'obama-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.obama.start) /
+            differenceOfTimeRange(data.obama)
+    );
+    setAvailability(
+        'bushjr-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.bushjr.start) /
+            differenceOfTimeRange(data.bushjr)
+    );
+    setAvailability(
+        'clinton-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.clinton.start) /
+            differenceOfTimeRange(data.clinton)
+    );
+    setAvailability(
+        'bushsr-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.bushsr.start) /
+            differenceOfTimeRange(data.bushsr)
+    );
+    setAvailability(
+        'reagan-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.reagan.start) /
+            differenceOfTimeRange(data.reagan)
+    );
+    setAvailability(
+        'carter-administration',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.carter.start) /
+            differenceOfTimeRange(data.carter)
+    );
 }
 
 function setAvailability(id, percentage) {
