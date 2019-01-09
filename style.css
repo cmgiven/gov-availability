@@ -1,0 +1,43 @@
+html {
+  color: #111;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin: 2em 0;
+  font-size: 3vw;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h1 span.big {
+  display: block;
+  font-size: 12vw;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+h2 {
+  margin: 2em 0 0;
+}
+
+.availability p {
+  margin: 0;
+  color: #0F8C79;
+  font-size: 8vw;
+  font-weight: 700;
+}
+
+p.bad {
+  color: #BD2D28;
+}
+
+.footer {
+  margin: 6em 0 2em;
+  color: #777;
+}
+
+.footer a {
+  color: #777;
+}
