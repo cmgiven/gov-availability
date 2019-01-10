@@ -12,6 +12,11 @@ function update(data) {
             differenceOfTimeRange(data.trump)
     );
     setAvailability(
+        'this-congress',
+         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.oneHundredSixteenth.start) /
+            differenceOfTimeRange(data.oneHundredSixteenth)
+    );
+    setAvailability(
         'all-time',
          1 - aggregateTimeRangesAfterDate(data.shutdowns, data.usa.start) /
             differenceOfTimeRange(data.usa)
