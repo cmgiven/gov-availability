@@ -16,6 +16,9 @@ function update(data) {
          1 - aggregateTimeRangesWithinRange(data.shutdowns, data.usa) /
             differenceOfTimeRange(data.usa)
     );
+}
+
+function updateOnce(data) {
     setAvailability(
         'obama-administration',
          1 - aggregateTimeRangesWithinRange(data.shutdowns, data.obama) /
@@ -90,6 +93,7 @@ xhttp.onreadystatechange = function() {
             update(data);
             setTimeout(loop, 1000);
         };
+        updateOnce(data);
 
         loop();
     }
