@@ -1,19 +1,23 @@
+var now;
+
 function update(data) {
-    var thisYear = new Date().getFullYear() + '-01-01T00:00:00-05:00'
+    now = new Date();
+
+    var thisYear = now.getFullYear() + '-01-01T00:00:00-05:00'
 
     setAvailability(
         'this-year',
-         1 - aggregateTimeRangesAfterDate(data.shutdowns, thisYear) /
+         1 - sumTimeRangesAfterDate(data.shutdowns, thisYear) /
             differenceOfTimeRange({ 'start': thisYear })
     );
     setAvailability(
         'this-administration',
-         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.trump.start) /
+         1 - sumTimeRangesAfterDate(data.shutdowns, data.trump.start) /
             differenceOfTimeRange(data.trump)
     );
     setAvailability(
         'all-time',
-         1 - aggregateTimeRangesAfterDate(data.shutdowns, data.usa.start) /
+         1 - sumTimeRangesAfterDate(data.shutdowns, data.usa.start) /
             differenceOfTimeRange(data.usa)
     );
 }
@@ -25,7 +29,7 @@ function setAvailability(id, percentage) {
     element.className = percentage < 0.99 ? 'bad' : '';
 }
 
-function aggregateTimeRangesAfterDate(ranges, filterDate) {
+function sumTimeRangesAfterDate(ranges, filterDate) {
     var i, range;
     var time = 0;
 
@@ -49,7 +53,7 @@ function aggregateTimeRangesAfterDate(ranges, filterDate) {
 
 function differenceOfTimeRange(range) {
     var start = new Date(range.start);
-    var end = range.end ? new Date(range.end) : new Date();
+    var end = range.end ? new Date(range.end) : now;
     return end.getTime() - start.getTime();
 }
 
