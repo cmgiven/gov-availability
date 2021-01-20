@@ -12,8 +12,8 @@ function update(data) {
     );
     setAvailability(
         'this-administration',
-         1 - sumTimeRangesAfterDate(data.shutdowns, data.trump.start) /
-            differenceOfTimeRange(data.trump)
+         1 - sumTimeRangesAfterDate(data.shutdowns, data.current.start) /
+            differenceOfTimeRange(data.current)
     );
     setAvailability(
         'all-time',
